@@ -7,6 +7,8 @@ const PORT = 3001;
 
 const mongoose = require ("mongoose");
 const dotenv = require ("dotenv");
+const helmet = require("helmet");
+const morgan = require("morgan");
 
 dotenv.config();
 
@@ -19,9 +21,13 @@ mongoose.connect('mongodb://127.0.0.1:27017/myapp'); {
 };
 
 
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
-// app.use(routes);
+// Middleware
+app.use(express.json());
+app.use(helmet());
+app.use(morgan("common"));
+app.use(routes);
+
+
 
 // db.once('open', () => {
 //   app.listen(PORT, () => {
