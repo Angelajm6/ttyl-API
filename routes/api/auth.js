@@ -1,6 +1,8 @@
 const router = require("express").Router();
 
 router.get("/",(req,res)=>{
-    
+    res.send('auth route')
 })
-const app = express();
+
+
+module.exports = router
