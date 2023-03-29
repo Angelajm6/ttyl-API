@@ -6,7 +6,7 @@ const UserSchema = new mongoose.Schema({
         require:true,
         min:3,
         max:20,
-        unique:true
+        unique:true,
     },
 
     email:{
@@ -36,7 +36,7 @@ const UserSchema = new mongoose.Schema({
         type:Array,
         default:[],
     },
-    
+
     isAdmin:{
         type:Boolean,
         default:false,
@@ -48,4 +48,4 @@ const UserSchema = new mongoose.Schema({
 );
 
 
-module.exports = mongoose.model("User", UserSchema);
+module.exports = mongoose.model ("User", UserSchema);
